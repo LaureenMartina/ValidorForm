@@ -14,5 +14,9 @@ class ValidorFormTests: XCTestCase {
     func testCheckPassword() {
         XCTAssert(Bool.checkPassword(with: "azerty", minLength: 6, maxLength: 12))
     }
+    
+    func testCheckEmail() {
+        XCTAssert(Bool.checkEmail(with: "abc@def.fr"))
+    }
 
 }
