@@ -9,4 +9,4 @@ notifications:
 before_install:
   - gem install bundler
   - bundle install
-script: bundle exec fastlane validorFormTest
+script: bundle exec fastlane validorFormTests
