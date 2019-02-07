@@ -11,11 +11,10 @@ import XCTest
 
 class ValidorFormTests: XCTestCase {
 
-    func testCheckPasswordSimple() {
-        XCTAssert(Bool.checkPassword(with: "azerty", minLength: 6, maxLength: 12))
-    }
-
-    func testCheckPasswordSpecialCharacters() {
-        XCTAssert(Bool.checkPassword(with: "azerty_", minLength: 6, maxLength: 12, specialCharacters: true))
+    let param = Parameters(minLength: nil, maxLength: nil, withSpecialCharacters: false, withUppercase: false, withNumbers: false)
+    
+    func testCheckPasswordComplex() {
+        XCTAssert(Bool.checkPassword(password: "azerty"))
+        XCTAssertEqual(Bool.checkPassword(password: "azerty", parameters: param), false)
     }
 }
