@@ -9,13 +9,30 @@
 import Foundation
 
 extension Bool: ValidorForm {
+    
 //    static func checkPassword(with password: String) -> Bool {
 //        guard let password != nil else { return false }
 //        return true
 //    }
     
     static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
+        guard password != nil else { return false }
+        
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{\(minLength),\(maxLength)}$")
+        
+        return passwordTest.evaluate(with: password)
+    }
+    
+    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Bool {
+        guard password != nil else { return false }
+        var passwordTest = NSPredicate()
+        
+        if specialCharacters {
+            passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[_!@#$&*]).{\(minLength),\(maxLength)}$")
+        } else {
+            passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{\(minLength),\(maxLength)}$")
+        }
+        
         return passwordTest.evaluate(with: password)
     }
 }
