@@ -12,4 +12,7 @@ protocol ValidorForm {
 //    static func checkPassword(with password: String) -> Self
     static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Self
     static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Self
+    
+    static func checkAge(with age: Int) -> Self
+    static func checkAge(with age: Int, min: Int, max: Int) -> Self
 }

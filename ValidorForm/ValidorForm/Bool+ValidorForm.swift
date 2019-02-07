@@ -30,6 +30,30 @@ extension Bool: ValidorForm {
         
         return passwordTest.evaluate(with: password)
     }
+    
+    public static func checkAge(with age: String) -> Bool {
+        guard age != nil else {
+            return false
+        }
+        if Int(age) != nil{
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    public static func checkAge(with age: String, min: Int, max: Int) -> Bool {
+        guard age != nil else {
+            return false
+        }
+        if Int(age) != nil && Int(age)! > min && Int(age)! < max{
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
 
 
