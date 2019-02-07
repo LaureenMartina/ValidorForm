@@ -25,8 +25,55 @@ extension Bool: ValidorForm {
         
         let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         
-        let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
-        return pred.evaluate(with: email)
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return emailTest.evaluate(with: email)
+    }
+    
+    static func checkDate(with dateString: String) -> Bool {
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "DD-MM-YYYY"
+        
+        if let _ = dateFormatterGet.date(from: dateString) {
+            return true
+        } else {
+            dateFormatterGet.dateFormat = "DD/MM/YYYY"
+            if let _ = dateFormatterGet.date(from: dateString) {
+                return true
+            } else {
+                dateFormatterGet.dateFormat = "YYYY-MM-DD"
+                if let _ = dateFormatterGet.date(from: dateString) {
+                    return true
+                } else {
+                    dateFormatterGet.dateFormat = "YYYY/MM/DD"
+                    if let _ = dateFormatterGet.date(from: dateString) {
+                        return true
+                    } else {
+                        dateFormatterGet.dateFormat = "DD/MM/YY"
+                        if let _ = dateFormatterGet.date(from: dateString) {
+                            return true
+                        } else {
+                            dateFormatterGet.dateFormat = "DD-MM-YY"
+                            if let _ = dateFormatterGet.date(from: dateString) {
+                                return true
+                            } else {
+                                dateFormatterGet.dateFormat = "YY/MM/DD"
+                                if let _ = dateFormatterGet.date(from: dateString) {
+                                    return true
+                                } else {
+                                    dateFormatterGet.dateFormat = "YY-MM-DD"
+                                    if let _ = dateFormatterGet.date(from: dateString) {
+                                        return true
+                                    } else {
+                                        return false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

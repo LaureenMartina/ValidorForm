@@ -18,5 +18,16 @@ class ValidorFormTests: XCTestCase {
     func testCheckEmail() {
         XCTAssert(Bool.checkEmail(with: "abc@def.fr"))
     }
+    
+    func testCheckDate() {
+        XCTAssert(Bool.checkDate(with: "01/12/1992"))
+        XCTAssert(Bool.checkDate(with: "01-12-1992"))
+        XCTAssert(Bool.checkDate(with: "01/12/92"))
+        XCTAssert(Bool.checkDate(with: "01-12-92"))
+        XCTAssert(Bool.checkDate(with: "1992/12/01"))
+        XCTAssert(Bool.checkDate(with: "1992-12-01"))
+        XCTAssert(Bool.checkDate(with: "92-12-01"))
+        XCTAssert(Bool.checkDate(with: "92/12/01"))
+    }
 
 }
