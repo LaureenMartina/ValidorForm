@@ -52,7 +52,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "LaureenMartina" => "laureenmar.15@gmail.com" }
+  spec.author             = { "LaureenMartina" => "laureenmar.15@gmail.com", "FlorianMazuy" => "florian.mazuy@gmail.com", "PrescillaLecurieux" => "prescilla.lecurieux@gmail.com", "MerylValier" => "meryl.valier@gmail.com"}
   # Or just: spec.author    = "LaureenMartina"
   # spec.authors            = { "LaureenMartina" => "laureenmar.15@gmail.com" }
   # spec.social_media_url   = "https://twitter.com/LaureenMartina"
@@ -79,7 +79,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/ValidorForm.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/LaureenMartina/ValidorForm.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
