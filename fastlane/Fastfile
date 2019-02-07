@@ -20,5 +20,10 @@ platform :ios do
   lane :validorFormTests do
     run_tests(scheme: "ValidatorForm")
     # add actions here: https://docs.fastlane.tools/actions
+
+    if git_branch() == 'develop'
+      slack(message: 'Hello push version: ' + get_version_number())
+      pod_push(path: 'ValidorForm.podspec')
+    end
   end
 end
