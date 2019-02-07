@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		319BD1B52209CBF60016B055 /* ValidorForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BD1AB2209CBF60016B055 /* ValidorForm.framework */; };
 		319BD1BA2209CBF60016B055 /* ValidorFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1B92209CBF60016B055 /* ValidorFormTests.swift */; };
-		319BD1BC2209CBF60016B055 /* ValidorForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 319BD1AE2209CBF60016B055 /* ValidorForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		319BD1C62209DD8A0016B055 /* ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C52209DD8A0016B055 /* ValidorForm.swift */; };
+		319BD1CA2209DFAD0016B055 /* Bool+ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +25,12 @@
 
 /* Begin PBXFileReference section */
 		319BD1AB2209CBF60016B055 /* ValidorForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ValidorForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		319BD1AE2209CBF60016B055 /* ValidorForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValidorForm.h; sourceTree = "<group>"; };
 		319BD1AF2209CBF60016B055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		319BD1B42209CBF60016B055 /* ValidorFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidorFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		319BD1B92209CBF60016B055 /* ValidorFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidorFormTests.swift; sourceTree = "<group>"; };
 		319BD1BB2209CBF60016B055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319BD1C52209DD8A0016B055 /* ValidorForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidorForm.swift; sourceTree = "<group>"; };
+		319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValidorForm.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +73,9 @@
 		319BD1AD2209CBF60016B055 /* ValidorForm */ = {
 			isa = PBXGroup;
 			children = (
-				319BD1AE2209CBF60016B055 /* ValidorForm.h */,
+				319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */,
 				319BD1AF2209CBF60016B055 /* Info.plist */,
+				319BD1C52209DD8A0016B055 /* ValidorForm.swift */,
 			);
 			path = ValidorForm;
 			sourceTree = "<group>";
@@ -93,7 +96,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				319BD1BC2209CBF60016B055 /* ValidorForm.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319BD1C62209DD8A0016B055 /* ValidorForm.swift in Sources */,
+				319BD1CA2209DFAD0016B055 /* Bool+ValidorForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +399,7 @@
 		319BD1C32209CBF60016B055 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6TF8P796N;
 				INFOPLIST_FILE = ValidorFormTests/Info.plist;
@@ -413,6 +418,7 @@
 		319BD1C42209CBF60016B055 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6TF8P796N;
 				INFOPLIST_FILE = ValidorFormTests/Info.plist;
