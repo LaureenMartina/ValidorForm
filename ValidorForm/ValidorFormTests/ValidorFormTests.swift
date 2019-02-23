@@ -18,4 +18,8 @@ class ValidorFormTests: XCTestCase {
     func testCheckPasswordSpecialCharacters() {
         XCTAssert(Bool.checkPassword(with: "azerty_", minLength: 6, maxLength: 12, specialCharacters: true))
     }
+    
+    func testCheckValidPhoneNumber() {
+        XCTAssert(Bool.checkphoneNumber(with: "0654789653", minLength: 10,  maxLength: 10))
+    }
 }

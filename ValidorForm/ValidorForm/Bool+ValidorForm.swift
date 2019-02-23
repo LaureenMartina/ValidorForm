@@ -30,6 +30,14 @@ extension Bool: ValidorForm {
         
         return passwordTest.evaluate(with: password)
     }
+    
+    public static func checkphoneNumber(with phonenumber: String, minLength: Int, maxLength: Int) -> Bool {
+        guard phonenumber != nil else { return false }
+        
+        let phoneNumberTest = NSPredicate(format: "SELF MATCHES %@", "^[7-9][0-9]{9}$")
+    
+        return phoneNumberTest.evaluate(with: phonenumber)
+    }
 }
 
 
