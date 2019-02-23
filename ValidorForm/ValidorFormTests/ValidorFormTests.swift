@@ -29,5 +29,9 @@ class ValidorFormTests: XCTestCase {
         XCTAssert(Bool.checkDate(with: "92-12-01"))
         XCTAssert(Bool.checkDate(with: "92/12/01"))
     }
+    
+    func testCheckAddress() {
+        XCTAssert(Bool.checkAddress(with: "242", street: "rue du Faubourg Saint-Antoine"  , code: "75012", country: "France"))
+    }
 
 }

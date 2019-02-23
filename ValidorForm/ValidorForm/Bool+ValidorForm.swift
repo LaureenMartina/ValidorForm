@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 extension Bool: ValidorForm {
     
@@ -74,6 +75,24 @@ extension Bool: ValidorForm {
                 }
             }
         }
+    }
+    
+    static func checkAddress(with num: String, street: String, code: String, country:String ) -> Bool {
+        
+        let address = Address(
+            number: num,
+            street: street,
+            zipCode: code,
+            country: country
+        )
+        
+        var bool = false
+        
+        CLGeocoder().geocodeAddressString(address.description) { (p, err) in
+            bool = true
+        }
+        
+        return bool
     }
 }
 

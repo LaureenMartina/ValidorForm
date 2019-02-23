@@ -15,4 +15,7 @@ protocol ValidorForm {
     static func checkEmail(with email: String?) -> Self
     
     static func checkDate(with date: String) -> Self
+    
+    static func checkAddress(with num: String, street: String, code: String, country:String ) -> Self
+    
 }

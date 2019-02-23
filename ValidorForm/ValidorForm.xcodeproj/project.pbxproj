@@ -11,6 +11,8 @@
 		319BD1BA2209CBF60016B055 /* ValidorFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1B92209CBF60016B055 /* ValidorFormTests.swift */; };
 		319BD1C62209DD8A0016B055 /* ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C52209DD8A0016B055 /* ValidorForm.swift */; };
 		319BD1CA2209DFAD0016B055 /* Bool+ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */; };
+		59211893220C54E100C9AE98 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59211892220C54E100C9AE98 /* Address.swift */; };
+		59211896220CDA4500C9AE98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59211895220CDA4500C9AE98 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		319BD1BB2209CBF60016B055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		319BD1C52209DD8A0016B055 /* ValidorForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidorForm.swift; sourceTree = "<group>"; };
 		319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+ValidorForm.swift"; sourceTree = "<group>"; };
+		59211892220C54E100C9AE98 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		59211895220CDA4500C9AE98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59211896220CDA4500C9AE98 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,7 @@
 				319BD1AD2209CBF60016B055 /* ValidorForm */,
 				319BD1B82209CBF60016B055 /* ValidorFormTests */,
 				319BD1AC2209CBF60016B055 /* Products */,
+				59211894220CDA4400C9AE98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +82,7 @@
 				319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */,
 				319BD1AF2209CBF60016B055 /* Info.plist */,
 				319BD1C52209DD8A0016B055 /* ValidorForm.swift */,
+				59211892220C54E100C9AE98 /* Address.swift */,
 			);
 			path = ValidorForm;
 			sourceTree = "<group>";
@@ -87,6 +94,14 @@
 				319BD1BB2209CBF60016B055 /* Info.plist */,
 			);
 			path = ValidorFormTests;
+			sourceTree = "<group>";
+		};
+		59211894220CDA4400C9AE98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59211895220CDA4500C9AE98 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59211893220C54E100C9AE98 /* Address.swift in Sources */,
 				319BD1C62209DD8A0016B055 /* ValidorForm.swift in Sources */,
 				319BD1CA2209DFAD0016B055 /* Bool+ValidorForm.swift in Sources */,
 			);
