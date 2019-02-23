@@ -35,8 +35,8 @@ extension Bool: ValidorForm {
         guard phonenumber != nil else { return false }
         
         let phoneNumberTest = NSPredicate(format: "SELF MATCHES %@", "^[7-9][0-9]{9}$")
-    
-        return phoneNumberTest.evaluate(with: phonenumber)
+        let result = phoneNumberTest.evaluate(with: phonenumber)
+        return result
     }
 }
 
