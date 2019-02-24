@@ -3,11 +3,11 @@ language: objective-c
 branches:
   only:
     - develop
-    - master
+    #- master
 notifications:
   email: false
 before_install:
   - gem update --system
   - gem install bundler
   - bundle install
-script: bundle exec fastlane ValidorFormTestsPlz
+script: bundle exec fastlane ValidorFormTests

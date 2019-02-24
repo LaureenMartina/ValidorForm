@@ -16,9 +16,9 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios ValidorFormTestsPlz
+### ios ValidorFormTests
 ```
-fastlane ios ValidorFormTestsPlz
+fastlane ios ValidorFormTests
 ```
 
 
