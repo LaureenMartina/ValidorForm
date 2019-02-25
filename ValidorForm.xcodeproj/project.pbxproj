@@ -10,7 +10,6 @@
 		319BD1B52209CBF60016B055 /* ValidorForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BD1AB2209CBF60016B055 /* ValidorForm.framework */; };
 		319BD1CA2209DFAD0016B055 /* Bool+ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */; };
 		6230CCFD22243CA90087FDDF /* ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C52209DD8A0016B055 /* ValidorForm.swift */; };
-		625E70B92223129A00545C16 /* ValidorFormTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 319BD1B42209CBF60016B055 /* ValidorFormTests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,7 +186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				625E70B92223129A00545C16 /* ValidorFormTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
