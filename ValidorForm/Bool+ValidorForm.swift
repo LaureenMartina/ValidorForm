@@ -10,6 +10,62 @@ import Foundation
 
 extension Bool: ValidorForm {
     
+    static func checkEmail(with email: String?) -> Bool {
+        guard email != nil else { return false }
+        
+        let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return pred.evaluate(with: email)
+    }
+    
+    static func checkDate(with dateString: String) -> Bool {
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "DD-MM-YYYY"
+        
+        if let _ = dateFormatterGet.date(from: dateString) {
+            return true
+        } else {
+            dateFormatterGet.dateFormat = "DD/MM/YYYY"
+            if let _ = dateFormatterGet.date(from: dateString) {
+                return true
+            } else {
+                dateFormatterGet.dateFormat = "YYYY-MM-DD"
+                if let _ = dateFormatterGet.date(from: dateString) {
+                    return true
+                } else {
+                    dateFormatterGet.dateFormat = "YYYY/MM/DD"
+                    if let _ = dateFormatterGet.date(from: dateString) {
+                        return true
+                    } else {
+                        dateFormatterGet.dateFormat = "DD/MM/YY"
+                        if let _ = dateFormatterGet.date(from: dateString) {
+                            return true
+                        } else {
+                            dateFormatterGet.dateFormat = "DD-MM-YY"
+                            if let _ = dateFormatterGet.date(from: dateString) {
+                                return true
+                            } else {
+                                dateFormatterGet.dateFormat = "YY/MM/DD"
+                                if let _ = dateFormatterGet.date(from: dateString) {
+                                    return true
+                                } else {
+                                    dateFormatterGet.dateFormat = "YY-MM-DD"
+                                    if let _ = dateFormatterGet.date(from: dateString) {
+                                        return true
+                                    } else {
+                                        return false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     static func checkAge(with age: String) -> Bool {
         if Int(age) != nil{
             return true
