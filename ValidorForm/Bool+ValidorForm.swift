@@ -27,7 +27,6 @@ extension Bool: ValidorForm {
         }
     }
     
-    
     static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
         guard password != nil else { return false }
         
