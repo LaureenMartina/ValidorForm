@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		319BD1B52209CBF60016B055 /* ValidorForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319BD1AB2209CBF60016B055 /* ValidorForm.framework */; };
-		319BD1BA2209CBF60016B055 /* ValidorFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1B92209CBF60016B055 /* ValidorFormTests.swift */; };
 		319BD1C62209DD8A0016B055 /* ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C52209DD8A0016B055 /* ValidorForm.swift */; };
 		319BD1CA2209DFAD0016B055 /* Bool+ValidorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BD1C92209DFAD0016B055 /* Bool+ValidorForm.swift */; };
+		625E70B92223129A00545C16 /* ValidorFormTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 319BD1B42209CBF60016B055 /* ValidorFormTests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625E70B92223129A00545C16 /* ValidorFormTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				319BD1BA2209CBF60016B055 /* ValidorFormTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +350,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P6TF8P796N;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -377,7 +377,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P6TF8P796N;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -401,7 +401,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P6TF8P796N;
+				DEVELOPMENT_TEAM = TZ7FG78ZPD;
 				INFOPLIST_FILE = ValidorFormTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -420,7 +420,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P6TF8P796N;
+				DEVELOPMENT_TEAM = TZ7FG78ZPD;
 				INFOPLIST_FILE = ValidorFormTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
