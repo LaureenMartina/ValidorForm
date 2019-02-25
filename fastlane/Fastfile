@@ -22,12 +22,12 @@ platform :ios do
 
     if git_branch() == 'develop'
       #slack(message: 'Hello push version: ' + get_version_number())
-      pod_push(path: 'ValidorForm.podspec')
+      pod_push(path: 'ValidorForm.podspec', 'allow-warnings:false')
     end
 
     if git_branch() == 'master'
       slack(message: 'Hello push version: ' + get_version_number())
-      pod_push(path: 'ValidorForm.podspec')
+      pod_push(path: 'ValidorForm.podspec', 'allow-warnings:true')
     end
   end
 
