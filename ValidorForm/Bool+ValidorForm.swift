@@ -9,8 +9,26 @@
 import Foundation
 
 extension Bool: ValidorForm {
+    static func checkAge(with age: String) -> Bool {
+        if Int(age) != nil{
+            return true
+        }
+        else {
+            return false
+        }
+    }
     
-    public static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
+    static func checkAge(with age: String, min: Int, max: Int) -> Bool {
+        if Int(age) != nil && Int(age)! > min && Int(age)! < max{
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    
+    static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
         guard password != nil else { return false }
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{\(minLength),\(maxLength)}$")
@@ -18,7 +36,7 @@ extension Bool: ValidorForm {
         return passwordTest.evaluate(with: password)
     }
     
-    public static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Bool {
+    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Bool {
         guard password != nil else { return false }
         var passwordTest = NSPredicate()
         
