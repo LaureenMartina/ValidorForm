@@ -9,6 +9,7 @@
 import Foundation
 
 extension Bool: ValidorForm {
+    
     static func checkAge(with age: String) -> Bool {
         if Int(age) != nil{
             return true
