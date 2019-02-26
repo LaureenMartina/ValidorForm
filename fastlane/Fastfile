@@ -28,7 +28,6 @@ platform :ios do
       #pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
       pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
       eq("pod repo push ValidorForm 'ValidorForm.podspec' --allow-warnings")
-      end
     end
 
     if git_branch() == 'master'
