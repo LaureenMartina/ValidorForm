@@ -8,27 +8,25 @@
 
 import Foundation
 
-struct Parameters {
-    var minLength: Int?
-    var maxLength: Int?
-    var withSpecialCharacters: Bool
-    var withUppercase: Bool
-    var withNumbers: Bool
+public struct Parameters {
+    public var minLength: Int?
+    public var maxLength: Int?
+    public var withSpecialCharacters: Bool
+    public var withUppercase: Bool
+    public var withNumbers: Bool
+    
+    public init(minLength: Int? = nil, maxLength: Int? = nil, withSpecialCharacters: Bool = false, withUppercase: Bool = false, withNumbers: Bool = false) {
+        self.maxLength = maxLength
+        self.minLength = minLength
+        self.withUppercase = withUppercase
+        self.withSpecialCharacters = withSpecialCharacters
+        self.withNumbers = withNumbers
+    }
 }
 
-protocol ValidorForm {
+public protocol ValidorForm {
     
     static func checkPassword(password: String) -> Self
     static func checkPassword(password: String, parameters: Parameters) -> Self
     
-//    static func checkPassword(with password: String, minLength: Int) -> Self
-//    static func checkPassword(with password: String, maxLength: Int) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, uppercase: Bool) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, numbers: Bool) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool, uppercase: Bool) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool, numbers: Bool) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, uppercase: Bool, numbers: Bool) -> Self
-//    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool) -> Self
 }
