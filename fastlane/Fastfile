@@ -11,24 +11,28 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+update_fastlane
 
 default_platform(:ios)
 
 platform :ios do
+  desc "Run all iOS tests and Build/Deploy on Travis CI"
   lane :ValidorFormTests do
-    run_tests(scheme: "ValidorFormTests")
+    run_tests(
+      scheme: "ValidorFormTests",
+      slack_url: "https://hooks.slack.com/services/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",
+      slack_channel: "#cocoswift")
     # add actions here: https://docs.fastlane.tools/actions
 
     if git_branch() == 'develop'
-      pod_push(path: 'ValidorForm.podspec', allow_warnings: true)
-      slack_url: "https://hooks.slack.com/services/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"
-      slack_channel: "#cocoswift"
+      #pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
+      expect(pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true).to eq("pod repo push ValidorForm 'ValidorForm.podspec' --allow-warnings")
+      end
     end
 
     if git_branch() == 'master'
-      slack(message: 'Hello push version: ' + get_version_number())
-      pod_push(path: 'ValidorForm.podspec', allow_warnings: true)
+      slack(message: 'Hello push version: ' + get_version_number(), success: true, default_payloads: [:git_branch, :last_git_commit_message])
+      pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
     end
   end
 end
