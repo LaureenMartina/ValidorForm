@@ -84,14 +84,14 @@ extension Bool: ValidorForm {
         }
     }
     
-    static func checkPassword(password: String) -> Bool {
+    public static func checkPassword(password: String) -> Bool {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[a-z])$")
         print(passwordTest.evaluate(with: password))
         
         return passwordTest.evaluate(with: password)
     }
     
-    static func checkPassword(password: String, parameters: Parameters) -> Bool {
+    public static func checkPassword(password: String, parameters: Parameters) -> Bool {
         var passwordTest = NSPredicate()
         var regex = "^(?=.*[a-z])"
         
