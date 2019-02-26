@@ -22,8 +22,8 @@ platform :ios do
 
     if git_branch() == 'develop'
       pod_push(path: 'ValidorForm.podspec', allow_warnings: true)
-      slack_url: "https://hooks.slack.com/services/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",
-      slack_channel: "#cocoswift")
+      slack_url: "https://hooks.slack.com/services/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"
+      slack_channel: "#cocoswift"
     end
 
     if git_branch() == 'master'
