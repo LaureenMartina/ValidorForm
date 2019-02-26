@@ -27,13 +27,13 @@ platform :ios do
     if git_branch() == 'develop'
       #pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
       #pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
-      pod_push(path: 'ValidorForm.podspec')
+      pod_push(path: 'ValidorForm.podspec', allow_warnings: true)
       #eq("pod repo push ValidorForm 'ValidorForm.podspec' --allow-warnings")
     end
 
     if git_branch() == 'master'
       slack(message: 'Hello push version: ' + get_version_number(), success: true, default_payloads: [:git_branch, :last_git_commit_message])
-      pod_push(path: 'ValidorForm.podspec')
+      pod_push(path: 'ValidorForm.podspec', allow_warnings: true)
       #pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
     end
   end
