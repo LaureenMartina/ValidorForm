@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ValidorForm"
-  spec.version      = "1.0.7"
+  spec.version      = "1.0.8"
   spec.summary      = "ValidorForm"
 
   spec.description  = "Form Validator"
