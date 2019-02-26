@@ -10,6 +10,32 @@ import Foundation
 
 extension Bool: ValidorForm {
     
+    public static func checkAnyString(with text: String, parameters: Parameters) -> Bool {
+        var test = NSPredicate()
+        var regex = "^(?=.*[a-z])"
+        
+        if parameters.withSpecialCharacters {
+            regex.append("(?=.*[_+/\\!@#$&*])")
+        }
+        
+        if parameters.withUppercase {
+            regex.append("(?=.*[A-Z])")
+        }
+        
+        if parameters.withNumbers {
+            regex.append("(?=.*[0-9])")
+        }
+        
+        if parameters.minLength != nil {
+            regex.append(".{\(parameters.minLength!),}")
+        } else if parameters.minLength != nil && parameters.maxLength != nil {
+            regex.append(".{\(parameters.minLength!),\(parameters.maxLength!)}")
+        }
+        
+        test = NSPredicate(format: "SELF MATCHES %@", regex)
+        return test.evaluate(with: text)
+    }
+    
     public static func checkEmail(with email: String?) -> Bool {
         guard email != nil else { return false }
         
@@ -121,10 +147,10 @@ extension Bool: ValidorForm {
         return passwordTest.evaluate(with: password)
     }
     
-    public static func checkphoneNumber(with phonenumber: String, minLength: Int, maxLength: Int) -> Bool {
+    public static func checkphoneNumber(with phonenumber: String, minLength: Int) -> Bool {
         guard phonenumber != nil else { return false }
         
-        let phoneNumberTest = NSPredicate(format: "SELF MATCHES %@", "^[7-9][0-9]{9}$")
+        let phoneNumberTest = NSPredicate(format: "SELF MATCHES %@", "^[0-9]{\(minLength),}$")
         let result = phoneNumberTest.evaluate(with: phonenumber)
         return result
     }
