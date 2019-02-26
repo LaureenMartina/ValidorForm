@@ -10,7 +10,7 @@ import Foundation
 
 extension Bool: ValidorForm {
     
-    static func checkEmail(with email: String?) -> Bool {
+    public static func checkEmail(with email: String?) -> Bool {
         guard email != nil else { return false }
         
         let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -19,7 +19,7 @@ extension Bool: ValidorForm {
         return pred.evaluate(with: email)
     }
     
-    static func checkDate(with dateString: String) -> Bool {
+    public static func checkDate(with dateString: String) -> Bool {
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "DD-MM-YYYY"
@@ -66,7 +66,7 @@ extension Bool: ValidorForm {
         }
     }
     
-    static func checkAge(with age: String) -> Bool {
+    public static func checkAge(with age: String) -> Bool {
         if Int(age) != nil{
             return true
         }
@@ -75,7 +75,7 @@ extension Bool: ValidorForm {
         }
     }
     
-    static func checkAge(with age: String, min: Int, max: Int) -> Bool {
+    public static func checkAge(with age: String, min: Int, max: Int) -> Bool {
         if Int(age) != nil && Int(age)! > min && Int(age)! < max{
             return true
         }
@@ -84,7 +84,7 @@ extension Bool: ValidorForm {
         }
     }
     
-    static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
+    public static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
         guard password != nil else { return false }
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{\(minLength),\(maxLength)}$")
@@ -92,7 +92,7 @@ extension Bool: ValidorForm {
         return passwordTest.evaluate(with: password)
     }
     
-    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Bool {
+    public static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Bool {
         guard password != nil else { return false }
         var passwordTest = NSPredicate()
         

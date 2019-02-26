@@ -11,6 +11,7 @@ import XCTest
 
 class ValidorFormTests: XCTestCase {
 
+<<<<<<< HEAD
     func testCheckPassword() {
         XCTAssert(Bool.checkPassword(with: "azerty", minLength: 6, maxLength: 12))
     }
@@ -28,6 +29,13 @@ class ValidorFormTests: XCTestCase {
         XCTAssert(Bool.checkDate(with: "1992-12-01"))
         XCTAssert(Bool.checkDate(with: "92-12-01"))
         XCTAssert(Bool.checkDate(with: "92/12/01"))
+=======
+    let param = Parameters(minLength: nil, maxLength: nil, withSpecialCharacters: false, withUppercase: false, withNumbers: false)
+    
+    func testCheckPasswordComplex() {
+        XCTAssert(Bool.checkPassword(password: "azerty"))
+        XCTAssertEqual(Bool.checkPassword(password: "azerty", parameters: param), false)
+>>>>>>> feature/verif_password
     }
 
 }
