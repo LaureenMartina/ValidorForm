@@ -26,7 +26,8 @@ platform :ios do
 
     if git_branch() == 'develop'
       #pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
-      expect(pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true).to eq("pod repo push ValidorForm 'ValidorForm.podspec' --allow-warnings")
+      pod_push(path: 'ValidorForm.podspec', repo: 'ValidorForm', allow_warnings: true)
+      eq("pod repo push ValidorForm 'ValidorForm.podspec' --allow-warnings")
       end
     end
 
