@@ -6,4 +6,4 @@ Ne vous attardez plus sur les messages erreurs, ValidorForm s'en chargera pour v
 
 Exemple d'écran:
 
-[logo]: https://github.com/LaureenMartina/ValidorForm/blob/master/img/screen.png "Formulaire"
+![alt text](https://github.com/LaureenMartina/ValidorForm/blob/master/img/screen.png "Formulaire")
