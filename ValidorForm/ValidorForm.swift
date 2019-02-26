@@ -24,7 +24,7 @@ public struct Parameters {
     }
 }
 
-protocol ValidorForm {
+public protocol ValidorForm {
 
     static func checkPassword(password: String) -> Self
     static func checkPassword(password: String, parameters: Parameters) -> Self
