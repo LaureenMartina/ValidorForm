@@ -8,14 +8,25 @@
 
 import Foundation
 
+struct Parameters {
+    var minLength: Int?
+    var maxLength: Int?
+    var withSpecialCharacters: Bool
+    var withUppercase: Bool
+    var withNumbers: Bool
+}
+
 protocol ValidorForm {
-//  static func checkPassword(with password: String) -> Self
-    static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Self
-    static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Self
+
+    static func checkPassword(password: String) -> Self
+    static func checkPassword(password: String, parameters: Parameters) -> Self
+    
     static func checkphoneNumber(with phonenumber: String, minLength: Int, maxLength: Int) -> Self
+    
     static func checkAge(with age: String) -> Self
     static func checkAge(with age: String, min: Int, max: Int) -> Self
-//  static func checkPassword(minLength: Int, maxLength: Int, specialCharacters: Bool) -> Self
+    
     static func checkEmail(with email: String?) -> Self
+    
     static func checkDate(with date: String) -> Self
 }

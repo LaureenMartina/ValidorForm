@@ -84,23 +84,39 @@ extension Bool: ValidorForm {
         }
     }
     
-    public static func checkPassword(with password: String, minLength: Int, maxLength: Int) -> Bool {
-        guard password != nil else { return false }
-        
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{\(minLength),\(maxLength)}$")
+    static func checkPassword(password: String) -> Bool {
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[a-z])$")
+        print(passwordTest.evaluate(with: password))
         
         return passwordTest.evaluate(with: password)
     }
     
-    public static func checkPassword(with password: String, minLength: Int, maxLength: Int, specialCharacters: Bool) -> Bool {
-        guard password != nil else { return false }
+    static func checkPassword(password: String, parameters: Parameters) -> Bool {
         var passwordTest = NSPredicate()
+        var regex = "^(?=.*[a-z])"
         
-        if specialCharacters {
-            passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[_!@#$&*]).{\(minLength),\(maxLength)}$")
-        } else {
-            passwordTest = NSPredicate(format: "SELF MATCHES %@", "^.{\(minLength),\(maxLength)}$")
+        if parameters.withSpecialCharacters {
+            regex.append("(?=.*[_+/\\!@#$&*])")
         }
+        
+        if parameters.withUppercase {
+            regex.append("(?=.*[A-Z])")
+        }
+        
+        if parameters.withNumbers {
+            regex.append("(?=.*[0-9])")
+        }
+        
+        if parameters.minLength != nil {
+            regex.append(".{\(parameters.minLength!),}")
+        } else if parameters.minLength != nil && parameters.maxLength != nil {
+            regex.append(".{\(parameters.minLength!),\(parameters.maxLength!)}")
+        }
+        
+        print(regex)
+        
+        passwordTest = NSPredicate(format: "SELF MATCHES %@", regex)
+        print(passwordTest.evaluate(with: password))
         
         return passwordTest.evaluate(with: password)
     }
