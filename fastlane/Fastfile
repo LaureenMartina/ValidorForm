@@ -30,9 +30,9 @@ platform :ios do
     end
   end
 
-  #lane :ValidorFormTests do
-  #run_tests(scheme: "ValidorFormTests",
-  #          slack_url: "https://hooks.slack.com/services/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",
-  #          slack_channel: "#cocoswift")
-  #end
+  lane :ValidorFormTests do
+  run_tests(scheme: "ValidorFormTests",
+            slack_url: "https://hooks.slack.com/services/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",
+            slack_channel: "#cocoswift")
+  end
 end
