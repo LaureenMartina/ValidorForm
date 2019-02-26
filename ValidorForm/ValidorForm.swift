@@ -29,7 +29,7 @@ public protocol ValidorForm {
     static func checkPassword(password: String) -> Self
     static func checkPassword(password: String, parameters: Parameters) -> Self
     
-    static func checkphoneNumber(with phonenumber: String, minLength: Int, maxLength: Int) -> Self
+    static func checkphoneNumber(with phonenumber: String, minLength: Int) -> Self
     
     static func checkAge(with age: String) -> Self
     static func checkAge(with age: String, min: Int, max: Int) -> Self
@@ -37,4 +37,6 @@ public protocol ValidorForm {
     static func checkEmail(with email: String?) -> Self
     
     static func checkDate(with date: String) -> Self
+    
+    static func checkAnyString(with text: String, parameters: Parameters) -> Self
 }
