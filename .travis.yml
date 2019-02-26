@@ -7,7 +7,8 @@ branches:
 notifications:
   email: false
 before_install:
-  - gem update --system
   - gem install bundler
+  - gem update --system
   - bundle install
+#install: bundle exec pod install --repo-udate --silent
 script: bundle exec fastlane ValidorFormTests
