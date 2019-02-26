@@ -8,12 +8,20 @@
 
 import Foundation
 
-struct Parameters {
-    var minLength: Int?
-    var maxLength: Int?
-    var withSpecialCharacters: Bool
-    var withUppercase: Bool
-    var withNumbers: Bool
+public struct Parameters {
+    public var minLength: Int?
+    public var maxLength: Int?
+    public var withSpecialCharacters: Bool
+    public var withUppercase: Bool
+    public var withNumbers: Bool
+    
+    public init(minLength: Int? = nil, maxLength: Int? = nil, withSpecialCharacters: Bool = false, withUppercase: Bool = false, withNumbers: Bool = false) {
+        self.maxLength = maxLength
+        self.minLength = minLength
+        self.withUppercase = withUppercase
+        self.withSpecialCharacters = withSpecialCharacters
+        self.withNumbers = withNumbers
+    }
 }
 
 protocol ValidorForm {

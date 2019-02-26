@@ -19,16 +19,17 @@ class ValidorFormTests: XCTestCase {
         XCTAssert(Bool.checkPassword(with: "azerty_", minLength: 6, maxLength: 12, specialCharacters: true))
     }*/
     
-    let param = Parameters(minLength: nil, maxLength: nil, withSpecialCharacters: false, withUppercase: false, withNumbers: false)
+    let param = Parameters(minLength: 4, maxLength: 12, withSpecialCharacters: false, withUppercase: false, withNumbers: false)
     
     func testCheckPasswordComplex() {
-        XCTAssert(Bool.checkPassword(password: "azerty"))
-        XCTAssertEqual(Bool.checkPassword(password: "azerty", parameters: param), false)
+        XCTAssertEqual(Bool.checkPassword(password: "azerty"), false)
+        XCTAssertEqual(Bool.checkPassword(password: "azerty", parameters: param), true)
     }
 
     func testCheckValidPhoneNumber() {
         XCTAssert(Bool.checkphoneNumber(with: "0654789653", minLength: 10,  maxLength: 10))
-
+    }
+    
     func testCheckAgeSimple(){
         XCTAssert(Bool.checkAge(with: "12"))
     }
